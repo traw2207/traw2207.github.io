@@ -1,0 +1,108 @@
+/* CSS Document */
+/* Navbar container */
+.navbar {
+  overflow: hidden;
+  background-color: #ffffff;
+  font-family: Arial Black;
+}
+
+/* Links inside the navbar */
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: Black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px; 
+  border: none;
+  outline: none;
+  color: Black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red text color to navbar links on hover */
+.navbar a:hover, .dropdown:hover .dropbtn {
+  color: #E62131;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #ffffff;
+  min-width: 160px;
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a yellow background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #FCDF0A;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* unordered list background */
+ul {
+  color:#E62131;
+  font-family: Arial Black;
+}
+h1 {
+	font-size: large;
+	font-family: Arial Black;
+}
+.logo {
+float: center;
+}
+p {
+	font-size: small;
+  font-family: Arial Black;
+}
+.span {
+  color:#E62131;
+}
+.mark {
+  background-color: #FCDF0A;
+  font-family: Arial Black;
+}
+.boxed {
+  background-color: #0090BA;
+  font-family: Arial Black;
+}
+.span {
+  font-color: #E62131;
+}
+test1 {
+  font-family: 'Times New Roman', Times, serif;
+  max-width: 100;
+}
+table {
+  font-family: Arial Black;
+}
+

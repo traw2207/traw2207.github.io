@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="Stylesheet" href="Styles.css">
+<link rel="shortcut icon" href="images/Tom icon coloured.png">
+<center><img draggable="false" src="images/TOM.png" width="141.5" height="51"></center>
+<title>Captcha</title>
+<link rel="Stylesheet" href="registrationStyle.css">
+</head>
+<body>
+<!--navigation bar-->
+<div class="navbar">
+	<a href="index.html">Home</a>
+	<a href="About.html">About</a>
+	<div class="dropdown">
+	  <button class="dropbtn">JavaScript projects
+		<i class="fa fa-caret-down"></i>
+	  </button>
+	  <div class="dropdown-content">
+		<a href="Reverse Polish Notation.html">Reverse Polish Notation Calculator</a>
+		<a href="Michael Jackson Health Update.html">Michael Jackson Health Update</a>
+		<a href="drumKit.html">Drum Kit</a>
+		<a href="examEntry.html">Exam Entry Form</a>
+		<a href="Captcha.html">Captcha</a>
+	  </div>
+	</div> 
+  </div>
+
+<br /><br />
+<center><h1>Register here:</h1></center>
+
+<font face= "arial black"><div style="text-align: center;">
+<div style="display: inline-block; text-align: left;">
+<form>
+	<div id="captchaImage"> </div> <!-- Empty div to contain random Captcha image -->
+	<label id="captchaPrompt">Enter the word shown above:</label><br />
+	<input type="text" id="captchaResponse" value="" size="40" />
+	<img draggable="false" src="images/refresh.png" onClick="setupForm();" height="20px"><br /><br />
+	<label id="emailPrompt">Enter your email to register:</label><br />
+	<input type="text" id="email" value="" size="40" /><br /><br />
+	<button type="button" onClick="validateForm();">Submit</button>
+	<input type="hidden" id="captchaAnswer" value="" />
+</form>
+</div>
+</center>
+<script type="text/javascript">
+// needs to run when page loads or refreshes
+function setupForm() {
+	document.getElementById("captchaPrompt").innerHTML='Enter the word shown above:';
+	document.getElementById("captchaPrompt").style.color="black";
+	document.getElementById("captchaResponse").value="";
+	document.getElementById("email").value="";
+	document.getElementById("emailPrompt").innerHTML='Enter your email to register:';
+	document.getElementById("emailPrompt").style.color="black";
+	var captcha=["images/captcha1.jpg","images/captcha2.jpg","images/captcha3.jpg"];
+	var captchaAnswer=["weasel","moose","polecat"];
+	var j=Math.ceil(Math.random() * captcha.length);
+	j--; // Javascript indexes start at 0 - the count is 3 items, so subtract 1 to get item in range 0-2
+	document.getElementById("captchaImage").innerHTML="<img src='"+captcha[j]+"' width='305' height='100' />";
+	document.getElementById("captchaAnswer").value=captchaAnswer[j];
+}
+
+function validateForm() {
+	// validates the captcha
+    if (document.getElementById("captchaResponse").value != document.getElementById("captchaAnswer").value) {
+      	document.getElementById("captchaPrompt").style.color="red";
+	alert('incorrect captcha')
+	setupForm()
+	} else {
+		// validates the email for an @ character within the string
+		var valid=false;
+		var email=document.getElementById("email").value;
+		//var emailLength=email.length;
+		if(email.indexOf("@") >= 1) {
+			valid=true;
+		}
+		if(valid==true){
+			alert('Thank you for registering with address: \n' + email);
+			document.getElementById("emailPrompt").style.color="black";
+			setupForm();
+		} else {
+			document.getElementById("emailPrompt").innerHTML='Enter a valid email to register:';
+			document.getElementById("emailPrompt").style.color="red";
+		}
+	
+	}
+}
+setupForm();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<center><img draggable="false" src="images/TOM.png" width="141.5" height="51"></center>
+<link rel="Stylesheet" href="Styles.css">
+<link rel="Stylesheet" href="registrationStyle.css">
+<title>Reverse Polish Notation</title>
+
+
+<script>
+// set up stack and its pointer
+arrStack = [];
+intStackPointer = 0;
+// the two stack functions
+function push(value) {
+ arrStack[intStackPointer] = value;
+ intStackPointer = intStackPointer + 1;
+}
+function pop() {
+ intStackPointer = intStackPointer - 1;
+ value = arrStack[intStackPointer];
+ return value;
+}
+// specific functions for this app
+function putOnStack() {
+ // add new element and show stack state
+ push(document.getElementById('inpValueIn').value);
+ showStack();
+}
+function takeOffStack() {
+ // pop, then show popped value and the stack left
+ document.getElementById('spnValueOut').innerHTML = pop();
+ showStack();
+}
+function showStack() {
+ document.getElementById('spnStack').innerHTML = arrStack.slice(0,
+intStackPointer);
+}
+function add() {
+	var firstNumber = pop();
+	var secondNumber = pop();
+	var total;
+	total = parseInt(firstNumber)+parseInt(secondNumber);
+	console.log(arrStack);
+	push(total)
+	showStack()
+	document.getElementById("sum").innerHTML = total;
+}
+function subtract() {
+	var firstNumber = pop();
+	var secondNumber = pop();
+	var total;
+	total = parseInt(firstNumber)-parseInt(secondNumber);
+	console.log(arrStack);
+	push(total)
+	showStack()
+	document.getElementById("sum").innerHTML = total;
+}
+function multiply() {
+	var firstNumber = pop();
+	var secondNumber = pop();
+	var total;
+	total = parseInt(firstNumber)*parseInt(secondNumber);
+	console.log(arrStack);
+	push(total)
+	showStack()
+	document.getElementById("sum").innerHTML = total;
+}
+function divide() {
+	var firstNumber = pop();
+	var secondNumber = pop();
+	var total;
+	total = parseInt(firstNumber)/parseInt(secondNumber);
+	console.log(arrStack);
+	push(total)
+	showStack()
+	document.getElementById("sum").innerHTML = total;
+}
+
+
+
+</script>
+</head>
+<body>
+
+
+<!--navigation bar-->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <div class="dropdown">
+    <button class="dropbtn">JavaScript projects
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Reverse Polish Notation.html">Reverse Polish Notation Calculator</a>
+      <a href="Michael Jackson Health Update.html">Michael Jackson Health Update</a>
+	  <a href="drumKit.html">Drum Kit</a>
+	  <a href="examEntry.html">Exam Entry Form</a>
+	  <a href="Captcha.html">Captcha</a>
+    </div>
+  </div> 
+</div>
+<br />
+<center><h1>Reverse Polish Notation Calculator</h1></center>
+<center>
+<p>
+<input id="inpValueIn" type="number">
+<button onclick="putOnStack()">Push</button>
+</p>
+<button onclick="add()">+</button>
+<button onclick="subtract()">-</button>
+<button onclick="multiply()">x</button>
+<button onclick="divide()">%</button>
+<p>
+<font face= "arial black">Current stack contents:</font><br />
+<font color="red" face= "arial black"><span id="spnStack"></span></font><br />
+</p>
+<p>
+		<font face= "arial black"><b>Result:</b></font>
+		<mark><font face= "arial black"><span id="sum"></span></font></mark>
+</p>
+</center>
+<br />
+<center><font face= "arial black"><u>How to use:</u></font></center>
+<font face= "arial black"><div style="text-align: center;">
+		<div style="display: inline-block; text-align: left;">
+		<p><ul>
+			<li>Enter value</li>
+			<li>Click the "push" button to enter value</li>
+			<li>Enter another value and push it</li>
+			<li>Click on one of the operator buttons to return an answer</li>
+		</ul></p>
+		</div>
+		<h1><u>What is RPN and how does it work?</u></h1>
+		
+		<p>In the 1920's, Polish mathematician Jan Lukasiewicz developed a formal logic system
+		which allowed mathematical expressions to be specified without parentheses by placing the
+		operators before (prefix notation) or after (postfix notation) the operands.</p>
+</body>
+</html>

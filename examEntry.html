@@ -1,0 +1,116 @@
+<html>
+<head>
+<center><img draggable="false" src="images/TOM.png" width="141.5" height="51"></center>
+<title>Exam entry</title>
+<link rel="Stylesheet" href="registrationStyle.css">
+<link rel="Stylesheet" href="Styles.css">
+<script language="javascript" type="text/javascript">
+
+function validateForm() {
+	var result = true;
+	var msg="";
+	if (document.ExamEntry.schoolName.value=="") {
+		msg+="You must enter your school's name \n";
+		document.ExamEntry.schoolName.focus();
+		document.getElementById('schoolName').style.color="red";
+		result = false;
+	}
+
+	if (document.ExamEntry.name.value=="") {
+		msg+="You must enter your name \n";
+		document.ExamEntry.name.focus();
+		document.getElementById('name').style.color="red";
+		result = false;
+	}
+	
+	if (document.ExamEntry.subject.value=="") {
+		msg+="You must enter your subject \n";
+		document.ExamEntry.subject.focus();
+		document.getElementById('subject').style.color="red";
+		result = false;
+	}
+	if (document.ExamEntry.examNumber.value=="") {
+		msg+="You must enter your examination number \n";
+		document.ExamEntry.examNumber.focus();	document.getElementById('examNumber').style.color="red";
+		result = false;
+	}
+	if(msg==""){
+		return result;
+	}
+	
+	{
+		alert(msg)
+	return result;
+	}
+}
+function confirmation(radio) {
+
+var ask = confirm("You have chosen " + radio.value + " as your type \n If you have chosen the right type, Click Ok! ")
+
+if (ask) {
+	alert("You clicked ok");
+}
+else {
+	alert("You clicked cancel");
+	radio.checked = false;
+}
+}
+</script>
+</head>
+<body>
+	<!--navigation bar-->
+<div class="navbar">
+		<a href="index.html">Home</a>
+		<a href="About.html">About</a>
+		<div class="dropdown">
+		  <button class="dropbtn">JavaScript projects
+			<i class="fa fa-caret-down"></i>
+		  </button>
+		  <div class="dropdown-content">
+			<a href="Reverse Polish Notation.html">Reverse Polish Notation Calculator</a>
+			<a href="Michael Jackson Health Update.html">Michael Jackson Health Update</a>
+			<a href="drumKit.html">Drum Kit</a>
+			<a href="examEntry.html">Exam Entry Form</a>
+			<a href="Captcha.html">Captcha</a>
+		  </div>
+		</div> 
+	  </div>
+<br /><br />
+<center>
+<h1>Exam Entry Form</h1>
+<form name="ExamEntry" method="post" action="examSuccess.html">
+<table width="400" border="0">
+<tr>
+	<td id="schoolName">School name:</td>
+	<td><input type="text" name="schoolName"/></td>
+</tr>
+<tr>
+	<td id="name">Full name:</td>
+	<td><input type="text" name="name"/></td>
+</tr>
+<tr>
+	<td id="subject">Subject:</td>
+	<td><input type="text" name="subject"/></td>
+</tr>
+<tr>
+	<td id="examNumber">Examination number:</td>
+	<td><input type="number" name="examNumber" max="9999" min="1000"></td>
+</tr>
+<tr>
+ <td>level of entry:</td>
+  <td><div>
+    <input type="radio" id="level1" name="level" value="A1" onClick= "confirmation();" />GCSE
+<br />
+    <input type="radio" id="level2" name="level" value="A2" onClick= "confirmation();" />AS level
+<br />
+    <input type="radio" id="level3" name="level" value="A3" onClick= "confirmation();" />A level
+  </div></td>	  
+</tr>
+</table>
+<br />
+<input type="submit" name="Submit" value="Submit" onclick="return validateForm(); radioButtonChecked();"/>
+<input type="reset" name="Reset" value="Reset"/>
+</form>
+</center>
+</body>
+</html>

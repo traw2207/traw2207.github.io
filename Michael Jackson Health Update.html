@@ -1,0 +1,95 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<center><img draggable="false" src="images/TOM.png" width="141.5" height="51"></center>
+<link rel="Stylesheet" href="Styles.css">
+<title>Michael Jackson Health Update</title>
+<style type="text/css">
+    .container {
+display: inline-block;
+    width:100px;
+    text-align: right;
+    }
+    .container input {
+display: inline-block;
+    width:100px;
+    text-align: right;
+    }
+
+    </style>
+<script>
+
+
+window.onload=function() {
+  // Month,Day,Year,Hour,Minute,Second
+  upTime('jun,05,2009,00:00:00'); //
+};
+function upTime(countTo) {
+  now = new Date();
+  countTo = new Date(countTo);
+  difference = (now-countTo);
+  days=Math.floor(difference/(60*60*1000*24)*1);
+  years = Math.floor(days / 365);
+  if (years > 1){ days = days - (years * 365)}
+  hours=Math.floor((difference%(60*60*1000*24))/(60*60*1000)*1);
+  mins=Math.floor(((difference%(60*60*1000*24))%(60*60*1000))/(60*1000)*1);
+  secs=Math.floor((((difference%(60*60*1000*24))%(60*60*1000))%(60*1000))/1000*1);
+  document.getElementById('years').firstChild.nodeValue = years;
+  document.getElementById('days').firstChild.nodeValue = days;
+  document.getElementById('hours').firstChild.nodeValue = hours;
+  document.getElementById('minutes').firstChild.nodeValue = mins;
+  document.getElementById('seconds').firstChild.nodeValue = secs;
+
+  clearTimeout(upTime.to);
+  upTime.to=setTimeout(function(){ upTime(countTo); },1000);
+}
+
+
+</script>
+</head>
+<body>
+<!--navigation bar-->
+<div class="navbar">
+  <a href="index.html">Home</a>
+  <a href="About.html">About</a>
+  <div class="dropdown">
+    <button class="dropbtn">JavaScript projects
+      <i class="fa fa-caret-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a href="Reverse Polish Notation.html">Reverse Polish Notation Calculator</a>
+      <a href="Michael Jackson Health Update.html">Michael Jackson Health Update</a>
+      <a href="drumKit.html">Drum Kit</a>
+      <a href="examEntry.html">Exam Entry Form</a>
+      <a href="Captcha.html">Captcha</a>
+    </div>
+  </div> 
+</div>
+<h1><font size="6"><center>Michael Jackson's Health</center></font></h1>
+<center><img draggable="false" src="images/michaelJacksonPopcorn.gif"></center>
+<h1><center>It's been</center></h1>
+ 
+
+<center><div id="countup">
+<table>
+  <tr><td><p id="years">00</p></td>
+  <td><p class="timeRefYears">years | </p></td>
+  <td><p id="days">00</p></td>
+  <td><p class="timeRefDays">days | </p></td>
+  <td><p id="hours">00</p></td>
+  <td><p class="timeRefHours">hours | </p></td>
+  <td><p id="minutes">00</p></td>
+  <td><p class="timeRefMinutes">minutes | </p></td>
+  <td><p id="seconds">00</p></td>
+  <td><p class="timeRefSeconds">seconds</p></td></tr>
+</table>
+</div></center>
+
+
+<h1><center>Since Michael Jackson went <font color="red"><u>missing</u></font></center></h1>
+<br />
+<br />
+<h1><center>Update:</center><h1>
+<center><iframe draggable="false" src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2FMichaelJacksonsHealthCondition%2Fposts%2F1839728526321380&width=500" width="500" height="171" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe></center>
+</body>
+</html>
