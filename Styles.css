@@ -80,8 +80,8 @@ h1 {
 .logo {
 float: center;
 }
-.p {
-	font-size: large;
+p {
+	font-size: small;
   font-family: Arial Black;
 }
 .span {
