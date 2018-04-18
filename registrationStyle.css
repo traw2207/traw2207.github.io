@@ -1,0 +1,33 @@
+body, input {
+
+}
+h1 {
+font-family: arial black;
+}
+label {
+font-family: arial black;
+font-size:12px;
+}
+button{
+font-family: arial black;
+background: black;
+color: white;
+border:0;
+}
+input{
+background: black;
+color: white;
+border: none;
+border-bottom: 2px solid red;
+outline-width: 0;
+
+input type="radio"{
+  font-size:9px;
+}
+}
+td{
+font-family: arial black;
+}
+.name {
+  font-family: arial black;
+}
